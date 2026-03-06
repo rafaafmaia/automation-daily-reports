@@ -1,0 +1,5 @@
+pyautogui
+pandas
+gspread
+google-auth
+gspread-dataframe

@@ -1,0 +1,30 @@
+# Configurações locais
+config_local.py
+
+# Credenciais
+config/cred.json
+.env
+
+# Dados exportados
+data/*.csv
+data/*.xlsx
+
+# Python
+__pycache__/
+*.pyc
+
+# Ambiente virtual
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Atalhos do Google Drive
+*.gsheet
+*.gslides
+*.gdraw
+*.gtable
+
+Relatorios_daily_automatic/
+tests/teste.py
