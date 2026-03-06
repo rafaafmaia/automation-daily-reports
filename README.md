@@ -1,73 +1,44 @@
-# Automação de Exportação de Relatórios Power BI
+# 🤖 Automação de Relatórios Diários (Daily Reports)
 
-Projeto de automação em Python para extração de dados do Power BI e integração com Google Sheets.
+Este projeto automatiza o fluxo completo de atualização e exportação de relatórios do **Power BI** para o **Google Sheets**. Ele utiliza RPA (Robotic Process Automation) para interagir com a interface do Power BI Desktop e integra APIs do Google para disponibilizar os dados na nuvem.
 
-## 📌 Objetivo
+## 🛠️ Tecnologias Utilizadas
 
-Automatizar a exportação de dados de relatórios do Power BI, atualizar uma planilha no Google Sheets e permitir que um processo automatizado distribua oportunidades de vendas para vendedores.
+* **Python**: Linguagem base do projeto.
+* **PyAutoGUI**: Automação da interface gráfica e controle de mouse/teclado.
+* **Pandas**: Manipulação e tratamento de dados.
+* **Gspread & Gspread-dataframe**: Integração robusta com a API do Google Sheets.
+* **Google Cloud Service Account**: Gerenciamento seguro de credenciais e acessos.
 
-Este projeto demonstra automação de processos de BI utilizando Python e integração entre ferramentas de análise de dados.
+## 📁 Estrutura do Projeto
 
-## ⚙️ Tecnologias utilizadas
+* `src/`: Contém os scripts principais da automação.
+* `config/`: Pasta para armazenar credenciais de API (protegida por `.gitignore`).
+* `config_example.py`: Modelo de configuração para facilitar o deploy por outros desenvolvedores.
+* `requirements.txt`: Lista de dependências para instalação rápida.
 
-* Python
-* PyAutoGUI
-* Pandas
-* Google Sheets API
-* gspread
+## 🔐 Segurança e Boas Práticas
 
-## 🔄 Fluxo da automação
+Este repositório foi desenvolvido seguindo padrões de segurança cibernética:
+* **Gestão de Segredos**: Arquivos de credenciais (`cred.json`) e configurações locais estão devidamente ignorados no sistema de versionamento.
+* **Modularização de Configurações**: Uso de variáveis de ambiente e arquivos locais para evitar dados sensíveis no código-fonte.
 
-1. Abre automaticamente um relatório `.pbix`
-2. Atualiza os dados do Power BI
-3. Exporta dois relatórios em CSV
-4. Remove arquivos antigos
-5. Envia os dados para abas específicas de uma planilha Google Sheets
-6. A planilha executa um script que distribui oportunidades de vendas automaticamente
+## 🚀 Como Executar
 
-## 📂 Estrutura do projeto
+1. **Instale as dependências:**
+   ```bash
+   pip install -r requirements.txt
 
-```
-aut-relatorio-daily/
-│
-├─ src
-│   └─ main.py
-│
-├─ config
-│   └─ cred.json
-│
-├─ data
-│
-├─ tests
-│
-├─ config_example.py
-├─ requirements.txt
-├─ .gitignore
-└─ README.md
-```
+2. **Configure suas credenciais:**
 
-## 🔧 Configuração
+Crie uma Service Account no Google Cloud.
 
-1. Clone o repositório
+Salve o JSON em config/cred.json.
 
-```
-git clone <url-do-repositorio>
-```
+Crie um arquivo src/config_local.py baseado no config_example.py com seus caminhos locais.
 
-2. Instale as dependências
+3. **Rode a automação:**
+   Bash
+   python src/main.py
 
-```
-pip install -r requirements.txt
-```
-
-3. Copie o arquivo de configuração
-
-```
-config_example.py → config_local.py
-```
-
-4. Configure os caminhos no arquivo `config_local.py`
-
-## 🔐 Segurança
-
-Este repositório **não contém dados sensíveis**, incluin
+Desenvolvido por Rafael Maia - https://www.linkedin.com/in/rafaafmaia/
