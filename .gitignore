@@ -28,3 +28,5 @@ Thumbs.db
 
 Relatorios_daily_automatic/
 tests/teste.py
+
+src/main_local.py
